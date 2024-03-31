@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*{
+  background-color: black;
+}
+.center {
+  background-color: rgba(206, 114, 44, 1);
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  position: relative;
+  top: 181px;
+  left: 121px;
+}
+
+.ring1{
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  border-radius: 50%;
+  border: 2px solid transparent;
+  background: linear-gradient(to bottom, rgba(206, 114, 44, 1), rgba(94, 24, 26, 0)) border-box; /*3*/
+  -webkit-mask: 
+     linear-gradient(#fff 0 0) padding-box, 
+     linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  animation-name: ani;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease;
+  animation-duration: 5s;
+  animation-direction: reverse;
+}
+.ring-div{
+  position: absolute;
+  top: 25%;
+  left: 35%;
+  transform: translate(50%, -50%);
+}
+.Notification-bell {
+  background-image: linear-gradient(to bottom, rgba(157, 13, 61, 0), rgba(223, 81, 43, 0.76));
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  position: absolute;
+  top: 200px;
+  left: 200px;
+}
+
+.send-btn{
+  background-image: linear-gradient(45deg, rgba(157, 13, 61, 0), rgba(223, 81, 43, 0.76)) ;
+  width: 500px;
+  height: 70px;
+  border-radius: 10px;
+  border: 1px solid rgba(223, 81, 43, 0.76);
+  font-weight: 700;
+  font-size: 20px;
+  margin-bottom: 40px;
+}
+
+.heading{
+  font-weight: 500;
+  font-size: 40px;
+}
+.about{
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 25px;
+  font-weight: 400;
+}
+
+@keyframes ani {
+  0% { transform: scale(1); opacity: 0; }
+  10% { transform: scale(1); opacity: 1; }
+  99.9% { transform: scale(0.2); opacity: 1; }
+  100% { transform: scale(0.2); opacity: 0; }
+}
+
+.ring1:nth-child(1) { animation-delay: 1s; }
+.ring1:nth-child(2) { animation-delay: 2s; }
+.ring1:nth-child(3) { animation-delay: 3s; }
+.ring1:nth-child(4) { animation-delay: 4s; }
+.ring1:nth-child(5) { animation-delay: 5s; }
+
+@media only screen and (max-width: 600px) {
+  .heading{
+    font-weight: 500;
+    font-size: 25px;
+  }
+  .about{
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 20px;
+    font-weight: 400;
+  }
+  .ring1{
+    height: 330px;
+    width: 330px;
+  }
+  .ring-div {
+    position: absolute;
+    top: 28%;
+    left: 6%;
+    transform: translate(50%, -50%);
+  }
+  .Notification-bell {    
+    position: absolute;
+    top: 125px;
+    left: 127px;
+    width: 80px;
+    height: 80px;
+  }
+  .send-btn{
+    height: 60px;
+    width: 330px;
+    margin-bottom: 20px;
+  }
+}
